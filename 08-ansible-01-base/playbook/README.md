@@ -14,4 +14,10 @@
 
 1. 08-ansible-01-base\playbook\group_vars\all\examp.yml
 2. ansible-playbook -i ./inventory/test.yml site.yml
-3. 
+3. ansible-vault encrypt file
+4. ansible-vault decrypt file
+5. ansible-vault view file
+6. ansible-playbook -i ./inventory/prod.yml site.yml `--ask-vault-pass`
+7. winrm
+8. ansible-doc -t connection ssh
+9. remote_user

@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  ubuntu:
+    image: ubuntu:latest
+    ports:
+      - "2222:22"
+    command: tail -f /dev/null
+  centos:
+    image: centos:latest
+    ports:
+      - "2223:22"
+    command: tail -f /dev/null

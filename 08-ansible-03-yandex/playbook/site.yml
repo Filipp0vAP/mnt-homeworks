@@ -55,7 +55,7 @@
       failed_when: create_db.rc != 0 and create_db.rc != 82
       changed_when: create_db.rc == 0
     - name: Create table
-      ansible.builtin.command: clickhouse-client -q 'CREATE TABLE vector_logs.logs_messages ("message" String) ENGINE = Log'
+      ansible.builtin.command: clickhouse-client -q 'CREATE TABLE logs.logs_messages ("message" String) ENGINE = Log'
       register: create_table
       failed_when: create_table.rc != 0 and create_table.rc !=57
       changed_when: create_table.rc == 0

@@ -5,4 +5,4 @@ clickhouse:
       ansible_host: 178.154.227.113
       ansible_connection: ssh
       ansible_user: netology
-      ansible_ssh_private_key_file: ../../id_rsa
+      ansible_ssh_private_key_file: ../../../id_rsa

@@ -6,3 +6,10 @@ clickhouse:
       ansible_connection: ssh
       ansible_user: netology
       ansible_ssh_private_key_file: ../../../id_rsa
+vector:
+  hosts:
+    vector-01:
+      ansible_host: 178.154.224.51
+      ansible_connection: ssh
+      ansible_user: netology
+      ansible_ssh_private_key_file: ../../../id_rsa

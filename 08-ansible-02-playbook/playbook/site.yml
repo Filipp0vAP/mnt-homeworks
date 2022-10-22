@@ -44,6 +44,14 @@
   hosts: vector
   remote_user: centos
   tasks:
+    - name: Install additional tools
+      become: true
+      ansible.builtin.yum:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - "vim-enhanced"  
     - name: Downloading Vector distributives
       ansible.builtin.get_url:
         mode: 0644

@@ -62,4 +62,9 @@
       ansible.builtin.yum:
         name: "/tmp/{{ vector_latest }}.rpm"
         state: present
+    - name: Start vector service
+      become: true
+      ansible.builtin.systemd:
+        name: vector
+        state: started        
 ...

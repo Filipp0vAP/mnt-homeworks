@@ -57,7 +57,7 @@
     - name: Create table
       ansible.builtin.command: clickhouse-client -q 'CREATE TABLE logs.logs_messages ("message" String) ENGINE = Log'
       register: create_table
-      failed_when: create_table.rc != 0 and create_table.rc !=57
+      failed_when: create_table.rc != 0 and create_table.rc != 57
       changed_when: create_table.rc == 0
 - name: Vector installation
   hosts: vector
@@ -80,11 +80,6 @@
       ansible.builtin.yum:
         name: "/tmp/{{ vector_latest }}.rpm"
         state: present
-    - name: Start vector service
-      become: true
-      ansible.builtin.systemd:
-        name: vector
-        state: started      
     - name: copy Vector config
       become: true
       ansible.builtin.template:
@@ -94,7 +89,12 @@
         # owner: "{{ ansible_user_id }}"
         # group: "{{ ansible_user_gid }}"
         backup: true
-        validate: vector validate --no-environment --config-yaml %s          
+        validate: vector validate --no-environment --config-yaml %s
+    - name: Start vector service
+      become: true
+      ansible.builtin.systemd:
+        name: vector
+        state: started
 
 - name: Lighthouse installation
   hosts: lighthouse

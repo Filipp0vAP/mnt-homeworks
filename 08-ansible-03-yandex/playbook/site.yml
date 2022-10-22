@@ -3,7 +3,7 @@
   hosts: clickhouse
   remote_user: netology
   handlers:
-    - name: Start clickhouse service
+    - name: restart-clickhouse-service
       become: true
       ansible.builtin.service:
         name: clickhouse-server

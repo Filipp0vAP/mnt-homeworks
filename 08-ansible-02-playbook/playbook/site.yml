@@ -55,7 +55,7 @@
     - name: Downloading Vector distributives
       ansible.builtin.get_url:
         mode: 0644
-        url: "https://packages.timber.io/vector/latest/{{ vector_latest }}.rpm"
+        url: "https://packages.timber.io/vector/0.21.1/{{ vector_latest }}.rpm"
         dest: "/tmp/{{ vector_latest }}.rpm"
     - name: Install Vector packages
       become: true

@@ -50,6 +50,7 @@
         name:
           - "vim-enhanced"
           - "libstdc++"
+          - "glibc"
         state: present
     - name: Downloading Vector distributives
       ansible.builtin.get_url:

@@ -9,7 +9,6 @@
         state: restarted
   tasks:
     - block:
-    - name: download all clickhouse distrib
         - name: Get clickhouse distrib
           ansible.builtin.get_url:
             mode: 0644

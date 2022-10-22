@@ -1,6 +1,7 @@
 ---
 - name: Install Clickhouse
   hosts: clickhouse
+  remote_user: netology
   handlers:
     - name: Start clickhouse service
       become: true

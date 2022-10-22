@@ -47,12 +47,10 @@
     - name: Install additional tools
       become: true
       ansible.builtin.yum:
-        name: "{{ packages }}"
-        state: present
-      vars:
-        packages:
+        name:
           - "vim-enhanced"
           - "libstdc++"
+        state: present
     - name: Downloading Vector distributives
       ansible.builtin.get_url:
         mode: 0644

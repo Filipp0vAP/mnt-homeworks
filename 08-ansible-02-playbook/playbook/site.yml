@@ -51,7 +51,8 @@
         state: present
       vars:
         packages:
-          - "vim-enhanced"  
+          - "vim-enhanced"
+          - "libstdc++"
     - name: Downloading Vector distributives
       ansible.builtin.get_url:
         mode: 0644

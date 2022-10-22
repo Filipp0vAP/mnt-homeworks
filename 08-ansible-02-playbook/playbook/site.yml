@@ -34,7 +34,7 @@
       become: true
       ansible.builtin.systemd:
         name: clickhouse-server
-        state: start
+        state: started
     - name: Create database
       ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
       register: create_db

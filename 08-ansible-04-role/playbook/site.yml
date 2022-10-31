@@ -61,40 +61,9 @@
       changed_when: create_table.rc == 0
 - name: Vector installation
   hosts: vector
-  remote_user: centos
-  tasks:
-    - name: Install additional tools
-      become: true
-      ansible.builtin.yum:
-        name:
-          - "libstdc++"
-          - "glibc"
-        state: present
-    - name: Downloading Vector distributives
-      ansible.builtin.get_url:
-        mode: 0644
-        url: "https://packages.timber.io/vector/0.21.1/{{ vector_latest }}.rpm"
-        dest: "/tmp/{{ vector_latest }}.rpm"
-    - name: Install Vector packages
-      become: true
-      ansible.builtin.yum:
-        name: "/tmp/{{ vector_latest }}.rpm"
-        state: present
-    - name: copy Vector config
-      become: true
-      ansible.builtin.template:
-        mode: 0644
-        src: templates/vector.yaml.j2
-        dest: "{{ vector_config_dest }}"
-        # owner: "{{ ansible_user_id }}"
-        # group: "{{ ansible_user_gid }}"
-        backup: true
-        validate: vector validate --no-environment --config-yaml %s
-    - name: Start vector service
-      become: true
-      ansible.builtin.systemd:
-        name: vector
-        state: started
+  remote_user: netology
+  roles:
+    - vector_role
 
 - name: Lighthouse installation
   hosts: lighthouse

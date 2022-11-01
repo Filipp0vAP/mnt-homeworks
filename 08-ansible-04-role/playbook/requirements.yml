@@ -6,7 +6,7 @@
   - name: clickhouse_role
     src: git@github.com:Filipp0vAP/clickhouse-role.git
     scm: git
-    version: 1.2.0
+    version: 1.2.1
   - name: lighthouse_role
     src: git@github.com:Filipp0vAP/lighthouse-role.git
     scm: git

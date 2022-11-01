@@ -2,19 +2,24 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: 178.154.227.113
+      ansible_host: 51.250.86.52
+      ansible_connection: ssh
+      ansible_user: netology
+      ansible_ssh_private_key_file: ../../../id_rsa
+    clickhouse-02:
+      ansible_host: 51.250.2.216
       ansible_connection: ssh
       ansible_user: netology
       ansible_ssh_private_key_file: ../../../id_rsa
 vector:
   hosts:
     vector-01:
-      ansible_host: 178.154.253.126
+      ansible_host: 51.250.7.25
       ansible_connection: ssh
       ansible_user: netology
       ansible_ssh_private_key_file: ../../../id_rsa
     vector-02:
-      ansible_host: 178.154.255.201
+      ansible_host: 51.250.1.171
       ansible_connection: ssh
       ansible_user: netology
       ansible_ssh_private_key_file: ../../../id_rsa
@@ -22,7 +27,12 @@ vector:
 lighthouse:
    hosts:
     lighthouse-01:
-      ansible_host: 51.250.65.20
+      ansible_host: 178.154.230.42
       ansible_connection: ssh
       ansible_user: netology
-      ansible_ssh_private_key_file: ../../../id_rsa   
+      ansible_ssh_private_key_file: ../../../id_rsa
+    lighthouse-02:
+      ansible_host: 51.250.77.21
+      ansible_connection: ssh
+      ansible_user: netology
+      ansible_ssh_private_key_file: ../../../id_rsa

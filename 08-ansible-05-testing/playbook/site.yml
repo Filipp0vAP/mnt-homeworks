@@ -9,7 +9,7 @@
   hosts: vector
   remote_user: netology
   roles:
-    - vector-role
+    - vector_role
 
 - name: Lighthouse installation
   hosts: lighthouse

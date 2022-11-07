@@ -1,0 +1,3 @@
+vector_host_ip: 51.250.7.25
+clickhouse_host_ip: 51.250.86.52
+lighthouse_host_ip: 178.154.230.42

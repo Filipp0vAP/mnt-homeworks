@@ -16,6 +16,14 @@
 4. Добавьте несколько assert'ов в verify.yml файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска, etc). Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
+## Ответы
+1. 
+```bash
+filipp0vap@filipp0vap-host:/host/netology/ansible-roles/clickhouse-role$ molecule test -s centos8
+CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
+```
+
+
 ### Tox
 
 1. Добавьте в директорию с vector-role файлы из [директории](./example)

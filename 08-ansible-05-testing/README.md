@@ -24,16 +24,22 @@ CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 ```
 2. [molucule_folder](./playbook/roles/vector_role/molecule/)
 
-3. Пофиксил все ошибки и добился что тест проходит успешно:
+3. Собрал образы Centos 8 и Ubuntu latest с предустановленным питоном
+
+[Dockerfile.ubuntu](./Dockerfile.ubuntu)
+
+[Dockerfile.centos8](./Dockerfile.centos8)
+
+Пофиксил все ошибки и добился что тест проходит успешно:
 ![molecule_test](./img/molecule%20test%201.png)
 ![molecule_test](./img/molecule%20test%202.png)
 ![molecule_test](./img/molecule%20test%203.png)
 ![molecule_test](./img/molecule%20test%204.png)
 
 4. Добавил проверки на версию и наличие конфига [molecule_verify](./playbook/roles/vector_role/molecule/default/verify.yml)
-
 ![molecule_verify](./img/molecule_verify.png)
 
+5. [vector_role_tag](https://github.com/Filipp0vAP/vector-role/releases/tag/1.3.0)
 
 ### Tox
 

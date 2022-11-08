@@ -58,8 +58,10 @@ CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 - [tox.ini](./playbook/roles/vector_role/tox.ini)
 - [tox-requirements.txt](./playbook/roles/vector_role/tox-requirements.txt)
 2. 3. ![tox_inside_docker](./img/tox_inside_docker.png)
-4. 
+4. [molecule_podman](./playbook/roles/vector_role/molecule/podman/)
+![molecule_podman_run](./img/molecule_test_podman.png)
 
+5. [tox.ini](./playbook/roles/vector_role/tox.ini)
 
 ## Необязательная часть
 

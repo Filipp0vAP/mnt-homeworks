@@ -30,7 +30,9 @@ CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 ![molecule_test](./img/molecule%20test%203.png)
 ![molecule_test](./img/molecule%20test%204.png)
 
-4. 
+4. Добавил проверки на версию и наличие конфига [molecule_verify](./playbook/roles/vector_role/molecule/default/verify.yml)
+
+![molecule_verify](./img/molecule_verify.png)
 
 
 ### Tox

@@ -1,0 +1,22 @@
+---
+- name: Install additional tools
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - "unzip"
+      - "sed"
+- name: Install EPEL repo
+  become: true
+  ansible.builtin.dnf:
+    name: epel-release
+    state: present
+- name: Install and launch nginx
+  become: true
+  ansible.builtin.dnf:
+    name: nginx
+    state: present
+  when: not ansible_check_mode
+  notify: start-nginx

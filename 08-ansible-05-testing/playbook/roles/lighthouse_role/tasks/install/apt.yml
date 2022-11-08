@@ -1,0 +1,17 @@
+---
+- name: Install additional tools
+  become: true
+  ansible.builtin.apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - "unzip"
+      - "sed"
+- name: Install and launch nginx
+  become: true
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+  when: not ansible_check_mode
+  notify: start-nginx

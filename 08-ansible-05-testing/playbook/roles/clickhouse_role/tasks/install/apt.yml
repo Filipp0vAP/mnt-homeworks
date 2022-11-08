@@ -1,0 +1,10 @@
+---
+- name: Install clickhouse packages
+  become: true
+  ansible.builtin.apt:
+    deb: "{{ item }}"
+  with_items:
+      - "{{ ansible_user_dir }}/clickhouse-common-static_{{ clickhouse_version }}_amd64.deb"
+      - "{{ ansible_user_dir }}/clickhouse-client_{{ clickhouse_version }}_all.deb"
+      - "{{ ansible_user_dir }}/clickhouse-server_{{ clickhouse_version }}_all.deb"
+  notify: Start clickhouse service

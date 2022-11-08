@@ -1,0 +1,12 @@
+---
+- name: Add download tasks
+  include_tasks: download/{{ ansible_pkg_mgr }}.yml
+
+- name: Add install tasks
+  include_tasks: install/{{ ansible_pkg_mgr }}.yml
+
+- name: Flush handlers
+  ansible.builtin.meta: flush_handlers
+
+- name: Add configure tasks
+  import_tasks: configure.yml

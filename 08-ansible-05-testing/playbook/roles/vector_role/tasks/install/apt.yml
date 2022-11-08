@@ -1,0 +1,13 @@
+---
+- name: Install additional tools
+  become: true
+  ansible.builtin.apt:
+    name:
+      - "libstdc++6"
+      - "glibc-source"
+    state: present
+- name: Install Vector packages
+  become: true
+  ansible.builtin.apt:
+    deb: "/tmp/vector_{{ vector_version }}-1_amd64.deb"
+    state: present

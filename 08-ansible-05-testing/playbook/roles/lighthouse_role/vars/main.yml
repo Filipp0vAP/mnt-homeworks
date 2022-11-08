@@ -1,0 +1,2 @@
+---
+lighthouse_clh_access_point: db_host = 'http://{{ clickhouse_host_ip }}:8123/';

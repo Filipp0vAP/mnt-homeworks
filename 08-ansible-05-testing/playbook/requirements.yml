@@ -2,7 +2,7 @@
   - name: vector_role
     src: git@github.com:Filipp0vAP/vector-role.git
     scm: git
-    version: 1.1.9
+    version: 1.1.10
   - name: clickhouse-role
     src: git@github.com:Filipp0vAP/clickhouse-role.git
     scm: git

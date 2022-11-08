@@ -22,6 +22,15 @@
 filipp0vap@filipp0vap-host:/host/netology/ansible-roles/clickhouse-role$ molecule test -s centos8
 CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 ```
+2. [molucule_folder](./playbook/roles/vector_role/molecule/)
+
+3. Пофиксил все ошибки и добился что тест проходит успешно:
+![molecule_test](./img/molecule%20test%201.png)
+![molecule_test](./img/molecule%20test%202.png)
+![molecule_test](./img/molecule%20test%203.png)
+![molecule_test](./img/molecule%20test%204.png)
+
+4. 
 
 
 ### Tox

@@ -39,7 +39,7 @@ CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 4. Добавил проверки на версию и наличие конфига [molecule_verify](./playbook/roles/vector_role/molecule/default/verify.yml)
 ![molecule_verify](./img/molecule_verify.png)
 
-5. [vector_role_tag](https://github.com/Filipp0vAP/vector-role/releases/tag/1.3.0)
+5. [vector role version 1.3.0](https://github.com/Filipp0vAP/vector-role/releases/tag/1.3.0)
 
 ### Tox
 
@@ -57,15 +57,17 @@ CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 1. 
 - [tox.ini](./playbook/roles/vector_role/tox.ini)
 - [tox-requirements.txt](./playbook/roles/vector_role/tox-requirements.txt)
-2. 3. ![tox_inside_docker](./img/tox_inside_docker.png)
+2. скрин ниже
+3. ![tox_inside_docker](./img/tox_inside_docker.png)
 4. [molecule_podman](./playbook/roles/vector_role/molecule/podman/)
 ![molecule_podman_run](./img/molecule_test_podman.png)
 
 5. [tox.ini](./playbook/roles/vector_role/tox.ini)
 6. Все тесты прошли успешно:
 ![tox](./img/tox.png)
+7. [vector role version 1.4.0](https://github.com/Filipp0vAP/vector-role/releases/tag/1.4.0)
+
 ## Необязательная часть
-6. 
 
 1. Проделайте схожие манипуляции для создания роли lighthouse.
 2. Создайте сценарий внутри любой из своих ролей, который умеет поднимать весь стек при помощи всех ролей.

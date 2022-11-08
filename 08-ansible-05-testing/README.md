@@ -62,8 +62,10 @@ CRITICAL 'molecule/centos8/molecule.yml' glob failed.  Exiting.
 ![molecule_podman_run](./img/molecule_test_podman.png)
 
 5. [tox.ini](./playbook/roles/vector_role/tox.ini)
-
+6. Все тесты прошли успешно:
+![tox](./img/tox.png)
 ## Необязательная часть
+6. 
 
 1. Проделайте схожие манипуляции для создания роли lighthouse.
 2. Создайте сценарий внутри любой из своих ролей, который умеет поднимать весь стек при помощи всех ролей.

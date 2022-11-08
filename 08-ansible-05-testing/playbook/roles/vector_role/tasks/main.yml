@@ -20,4 +20,6 @@
   ansible.builtin.systemd:
     name: vector
     state: started
-  when: ansible_virtualization_type != "docker"
+  when:
+    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "podman"

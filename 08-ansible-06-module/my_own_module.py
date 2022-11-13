@@ -38,7 +38,7 @@ options:
 #     - my_namespace.my_collection.my_doc_fragment_name
 
 author:
-    - Oleg Zhuravlev (@olezhuravlev)
+    - Aleksandr Filippov (@Filipp0vAP)
 '''
 
 EXAMPLES = r'''

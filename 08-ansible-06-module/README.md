@@ -171,6 +171,46 @@ if __name__ == '__main__':
 16. Запустите playbook, убедитесь, что он работает.
 17. В ответ необходимо прислать ссылку на репозиторий с collection
 
+## Ответ
+1. В виртуальном окружении создать новый `my_own_module.py` файл
+2. Наполнить его содержимым
+3. Заполните файл в соответствии с требованиями ansible так, чтобы он выполнял основную задачу: module должен создавать текстовый файл на удалённом хосте по пути, определённом в параметре `path`, с содержимым, определённым в параметре `content`.
+[my_own_module](./my_own_module.py)
+4. Проверьте module на исполняемость локально.
+![localrun](./img/localrun.png)
+5. Напишите single task playbook и используйте module в нём.
+6. Проверьте через playbook на идемпотентность.
+
+    [site.yml](./site.yml)
+    ![playbookrun](./img/playbookrun.png)
+7. Выйдите из виртуального окружения.
+![deactivate](./img/deactivate.png)
+8. Инициализируйте новую collection: `ansible-galaxy collection init my_own_namespace.yandex_cloud_elk`
+![my_own_collection_init](./img/my_own_collection_init.png)
+9. В данную collection перенесите свой module в соответствующую директорию.
+![copy_module](./img/copy_module.png)
+10. Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module
+![role_task](./img/role_task.png)
+11. Создайте playbook для использования этой role.
+![role_playbook](./img/role_playbook.png)
+12. Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
+
+    [релиз 1.0.0](https://github.com/Filipp0vAP/my_own_collection/releases/tag/1.0.0)
+
+13. Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.
+![build](./img/build.png)
+
+14. Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
+![task_14](./img/task_14.png)
+15. Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`
+![install_from_tar](./img/install_from_tar.png)
+16. Запустите playbook, убедитесь, что он работает.
+![run_collection_playbook](./img/run_collection_playbook.png)
+17. В ответ необходимо прислать ссылку на репозиторий с collection
+
+    [репозиторий с collection](https://github.com/Filipp0vAP/my_own_collection)
+
+
 ## Необязательная часть
 
 1. Реализуйте свой собственный модуль для создания хостов в Yandex Cloud.

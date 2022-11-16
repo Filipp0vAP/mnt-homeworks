@@ -52,4 +52,4 @@
 
 
 ## Дополнительные материалы к лекциям
-[Дополнительные материалы к лекциям по Ansible](https://github.com/netology-code/mnt-homeworks/tree/master/08-ansible-additional)
+[Дополнительные материалы к лекциям по Ansible](./08-ansible-additional)

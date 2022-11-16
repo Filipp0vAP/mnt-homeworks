@@ -1,8 +1,5 @@
 ---
-elasticsearch:
+clickhouse:
   hosts:
-    localhost:
-      ansible_connection: ssh
-      ansible_user: netology
-      ansible_host: тут был ip
-      ansible_ssh_private_key_file: ../id_rsa
+    clickhouse-01:
+      ansible_host: <IP_here>

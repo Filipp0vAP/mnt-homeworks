@@ -82,16 +82,18 @@
 ## Знакомство с Maven
 
 Проверка версии мавена
+
 ![mvn_version](./img/mvn_version.png)
 
 Билд
+
 ![mvn_build](./img/mvn_build.png)
 
 Наш артефакт в папке `~/.m2/repository/`
 
 ![our_artifact](./img/our_artifact.png)
 
-исправленный файл [pom.xml](./mvn/pom.xml)
+Исправленный файл [pom.xml](./mvn/pom.xml)
 
 ---
 

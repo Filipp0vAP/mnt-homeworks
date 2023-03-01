@@ -5,3 +5,7 @@ services:
     image: sonarsource/sonar-scanner-cli:latest
     volumes:
       - ./example:/example
+  maven:
+    image: maven:latest
+    volumes:
+      - ./mvn:/opt/data/mvn

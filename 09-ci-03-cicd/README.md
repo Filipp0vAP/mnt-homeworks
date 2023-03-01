@@ -39,7 +39,7 @@
 3. Проверяем, что все файлы загрузились успешно
 4. В ответе присылаем файл `maven-metadata.xml` для этого артефекта
 
-### Знакомство с Maven
+## Знакомство с Maven
 
 ### Подготовка к выполнению
 
@@ -55,6 +55,43 @@
 2. Запускаем команду `mvn package` в директории с `pom.xml`, ожидаем успешного окончания
 3. Проверяем директорию `~/.m2/repository/`, находим наш артефакт
 4. В ответе присылаем исправленный файл `pom.xml`
+
+
+
+# Ответы
+
+## Знакомоство с SonarQube
+
+Первое сканирование
+
+![first_scan](./img/first_scan.png)
+
+Сканирование после иправления
+
+![fix_all_issue](./img/fix_all_issue.png)
+
+## Знакомство с Nexus
+
+Загруженные артефакты в Nexus
+![nexus](./img/nexus.png)
+
+Файл с мета данными
+[maven-metadata.xml](./maven-metadata.xml)
+
+
+## Знакомство с Maven
+
+Проверка версии мавена
+![mvn_version](./img/mvn_version.png)
+
+Билд
+![mvn_build](./img/mvn_build.png)
+
+Наш артефакт в папке `~/.m2/repository/`
+
+![our_artifact](./img/our_artifact.png)
+
+исправленный файл [pom.xml](./mvn/pom.xml)
 
 ---
 

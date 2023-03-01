@@ -1,0 +1,7 @@
+version: '2.1'
+
+services:
+  sonar-scanner:
+    image: sonarsource/sonar-scanner-cli:latest
+    volumes:
+      - ./example:/example

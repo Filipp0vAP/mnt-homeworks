@@ -1,6 +1,6 @@
 node("linux"){
     stage("Git checkout"){
-        git url: 'git@github.com:aragastmatb/example-playbook.git'
+        git url: 'https://github.com/Filipp0vAP/example-playbook.git'
     }
     stage("Sample define secret_check"){
         secret_check=true

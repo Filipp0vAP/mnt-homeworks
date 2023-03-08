@@ -23,3 +23,4 @@ vector_config:
       encoding: default
       healthcheck: false
       skip_unknown_fields: true
+ansible_python_interpreter: /usr/local/bin/python3.10

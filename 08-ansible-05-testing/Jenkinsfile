@@ -1,0 +1,21 @@
+pipeline {
+    agent {
+        label 'ansible'
+    }
+    stages {
+        stage('Prepare'){
+            steps {
+                sh 'python3 -m pip install "molecule==3.5.2" molecule-docker'
+                sh 'docker pull filipp0vap/centos8-python39:latest && docker pull filipp0vap/ubuntu-python:latest'
+            }
+        }
+        stage('Run test'){
+            steps {
+                sh 'git clone https://github.com/Filipp0vAP/mnt-homeworks.git/'
+                sh 'cd mnt-homeworks/08-ansible-05-testing/playbook/roles/vector_role && molecule test'
+            }
+        }
+    }    
+    
+    
+}

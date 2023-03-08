@@ -7,7 +7,7 @@ node("linux"){
     }
     stage("Run playbook"){
         if (secret_check){
-            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+            sh 'ansible-galaxy init java && ansible-playbook site.yml -i inventory/prod.yml'
         }
         else{
             echo 'need more action'

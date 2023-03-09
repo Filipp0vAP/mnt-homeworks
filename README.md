@@ -2,7 +2,10 @@
 
 В этом репозитории расположены ваши домашние задания к каждой лекции. 
 
-В [master](https://github.com/Filipp0vAP/mnt-homeworks/tree/master) ветке находятся актуальные задания без ответов.
+В [master](https://github.com/Filipp0vAP/mnt-homeworks/tree/master) ветке находятся актуальные задания без ответов для курса DevOps-15.
+
+В [MNT-video](https://github.com/Filipp0vAP/mnt-homeworks/tree/MNT-video) ветке находятся актуальные задания без ответов для курса DevOps-21 (последний курс с короткими видео).
+
 
 В ветке [MNT-15](https://github.com/Filipp0vAP/mnt-homeworks/tree/MNT-15) находятся решенные задания с ответами.
 

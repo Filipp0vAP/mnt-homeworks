@@ -33,6 +33,18 @@
 
 ---
 
+## Ответ
+Ссылка на [репозиторий](https://github.com/Filipp0vAP/example-teamcity)
+
+Скрин сборок в TeamCity
+
+![TeamCity](./img/TeamCity.png)
+
+Скрин из Nexus
+
+![Nexus](./img/Nexus.png)
+
+---
 ### Как оформить решение задания
 
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.

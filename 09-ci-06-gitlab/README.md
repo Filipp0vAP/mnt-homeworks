@@ -54,46 +54,132 @@
 - лог успешного выполнения пайплайна;
 - решённый Issue.
 
+---
 
 ## Ответ
 ### Подготовка к выполнению
-Установил: 
-- yandex сloud cli
-- jq
-- helm
-- kubectl
+-  Установил: 
+    - yandex сloud cli
+    - jq
+    - helm
+    - kubectl
+    <details>
+    <summary> screenshot </summary>
 
-![utilits](./img/utilits.png)
+    ![utilits](./img/utilits.png)
+    </details>
 
-В Yandex.Cloud создал:
-- Сеть и подсети
-- Сервисные аккаунты
-- k8s кластер и группу узлов
-- Docker registry
-- настроил kubectl на работу с кластером
+- В Yandex.Cloud создал:
+    - Сеть и подсети
+    - Сервисные аккаунты
+    - k8s кластер и группу узлов
+    - Docker registry
+    - настроил kubectl на работу с кластером
 
-![yc](./img/yc.png)
+    <details>
+    <summary> screenshot </summary>
 
-В гитлабе создал публичную группу и репозиторий
+    ![yc](./img/yc.png)
+    </details>
 
-![gitlab](./img/gitlab.png)
+- В гитлабе создал публичную группу и репозиторий
+
+    <details>
+    <summary> screenshot </summary>
+
+    ![gitlab](./img/gitlab.png)
+
+    </details>
 
 ### DevOps
 
-С помощью Helm поднял и зарегистрировал GitLab Runner 
-![runner](./img/runner.png)
+- С помощью Helm поднял и зарегистрировал GitLab Runner 
+    <details>
+    <summary> screenshot </summary>
 
-Написал:
-- [Dockerfile](./repository/Dockerfile)
-- k8s манифест [k8s.yaml](./repository/k8s.yaml)
-- gitlab ci конфиг [.gitlab-ci.yml](./repository/.gitlab-ci.yml)
+    ![runner](./img/runner.png)
+    </details>
 
-Все отвечает требованиям
+- Написал:
+    - [Dockerfile](./repository/Dockerfile)
+    - k8s манифест [k8s.yaml](./repository/k8s.yaml)
+    - gitlab ci конфиг [.gitlab-ci.yml](./repository/.gitlab-ci.yml)
 
 ### Product Owner
 
+- Создал задачу
+    <details>
+    <summary> screenshot </summary>
 
+    ![new_issue](./img/new_issue.png)
+    </details>
 
+### Developer
+
+- Открыл MR и создал новую ветку
+    <details>
+    <summary> screenshot </summary>
+
+    ![open_mr](./img/open_mr.png)
+    </details>
+
+- Внес изменения
+    <details>
+    <summary> screenshot </summary>
+
+    ![fix](./img/fix_new_branch.png)
+    </details>
+
+- Выполнил merge и закрыл MR
+    <details>
+    <summary> screenshot </summary>
+
+    ![resolve_mr](./img/resolve_mr.png)
+    </details>
+
+- Проверил Pipeline 
+    <details>
+    <summary> screenshot </summary>
+
+    ![pipeline](./img/pipeline_mr.png)
+
+    </details>
+
+- Билд прошел успешно
+    <details>
+    <summary> screenshot </summary>
+
+    ![build_1](./img/build_1.png)
+    ![build_2](./img/build_2.png)
+    ![build_3](./img/build_3.png)
+   </details>
+    лог: 
+    
+    [build_log](./logs/build.log)
+- Деплой тоже
+    <details>
+    <summary> screenshot </summary>
+
+    ![deploy](./img/deploy.png)
+   </details>
+    лог: 
+    
+    [deploy_log](./logs/deploy.log)
+
+### Tester
+- Ответ от приложения проверил
+    <details>
+    <summary> screenshot </summary>
+
+    ![curl](./img/curl_mr.png)
+   </details>
+- Issue закрыл
+    <details>
+    <summary> screenshot </summary>
+
+    ![close_issue](./img/close_issue.png)
+   </details>
+---
 ### Важно 
 После выполнения задания выключите и удалите все задействованные ресурсы в Yandex Cloud.
 

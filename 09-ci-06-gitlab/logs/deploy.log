@@ -1,0 +1,46 @@
+[0KRunning with gitlab-runner 15.10.1 (dcfb4b66)[0;m
+[0K  on gitlab-runner-fc658f4b7-dplh2 ZGZ-6XS7, system ID: r_2pdZe8OLdOBu[0;m
+section_start:1680213407:prepare_executor
+[0K[0K[36;1mPreparing the "kubernetes" executor[0;m[0;m
+[0KUsing Kubernetes namespace: default[0;m
+[0KUsing Kubernetes executor with image gcr.io/cloud-builders/kubectl:latest ...[0;m
+[0KUsing attach strategy to execute scripts...[0;m
+section_end:1680213407:prepare_executor
+[0Ksection_start:1680213407:prepare_script
+[0K[0K[36;1mPreparing environment[0;m[0;m
+Waiting for pod default/runner-zgz-6xs7-project-2-concurrent-0ncnbq to be running, status is Pending
+Running on runner-zgz-6xs7-project-2-concurrent-0ncnbq via gitlab-runner-fc658f4b7-dplh2...
+
+section_end:1680213411:prepare_script
+[0Ksection_start:1680213411:get_sources
+[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+[32;1mFetching changes with git depth set to 20...[0;m
+Initialized empty Git repository in /builds/netology/netology/.git/
+[32;1mCreated fresh repository.[0;m
+[32;1mChecking out f9a04c21 as detached HEAD (ref is main)...[0;m
+
+[32;1mSkipping Git submodules setup[0;m
+
+section_end:1680213412:get_sources
+[0Ksection_start:1680213412:step_script
+[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+[32;1m$ kubectl config set-cluster k8s --server="$KUBE_URL" --insecure-skip-tls-verify=true[0;m
+Cluster "k8s" set.
+[32;1m$ kubectl config set-credentials admin --token="$KUBE_TOKEN"[0;m
+User "admin" set.
+[32;1m$ kubectl config set-context default --cluster=k8s --user=admin[0;m
+Context "default" created.
+[32;1m$ kubectl config use-context default[0;m
+Switched to context "default".
+[32;1m$ sed -i "s/__VERSION__/gitlab-$CI_COMMIT_SHORT_SHA/" k8s.yaml[0;m
+[32;1m$ kubectl apply -f k8s.yaml[0;m
+namespace/hello-world unchanged
+deployment.apps/hello-world-deployment configured
+service/hello unchanged
+
+section_end:1680213413:step_script
+[0Ksection_start:1680213413:cleanup_file_variables
+[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+
+section_end:1680213414:cleanup_file_variables
+[0K[32;1mJob succeeded[0;m

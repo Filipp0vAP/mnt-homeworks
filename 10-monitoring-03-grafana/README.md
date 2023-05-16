@@ -26,7 +26,7 @@
 1. Подключите поднятый вами prometheus, как источник данных.
 1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
-## Задание 2
+### Задание 2
 
 Изучите самостоятельно ресурсы:
 
@@ -43,15 +43,61 @@
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
-## Задание 3
+### Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 
-## Задание 4
+### Задание 4
 
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
 1. В качестве решения задания приведите листинг этого файла.
+
+
+---
+
+## Ответы
+
+### Задание 1
+
+Сервисы поднял, Grafana подключил к Prometheus
+![Grafana_source](./img/Grafana_source.png)
+
+### Задание 2
+
+1. утилизация CPU для nodeexporter (в процентах, 100-idle)
+    ``` 
+    (sum by(instance) (irate(node_cpu_seconds_total{instance="nodeexporter:9100",job="nodeexporter", mode!="idle"}[5m])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance="nodeexporter:9100",job="nodeexporter"}[5m])))) * 100
+
+    ```
+1. CPULA 1/5/15
+    ``` 
+    (node_load1{instance="nodeexporter:9100",job="nodeexporter"})
+
+    (node_load5{instance="nodeexporter:9100",job="nodeexporter"})
+
+    (node_load15{instance="nodeexporter:9100",job="nodeexporter"})
+
+    ```
+1. количество свободной оперативной памяти
+    ``` 
+    node_memory_Cached_bytes{instance="nodeexporter:9100",job="nodeexporter"} + node_memory_Buffers_bytes{instance="nodeexporter:9100",job="nodeexporter"} + node_memory_SReclaimable_bytes{instance="nodeexporter:9100",job="nodeexporter"}
+
+    ```
+1. количество места на файловой системе
+    ``` 
+    node_filesystem_avail_bytes{instance="nodeexporter:9100",job="nodeexporter",device!~'rootfs',fstype!='tmpfs',mountpoint='/'}
+
+    ```
+### Задание 3
+
+Настроил алерты, жаль они работают только в Graph
+
+![My_DashBoard](./img/My_DashBoard.png)
+
+### Задание 4
+
+[JSON](./netology.json) с дашбордом Netology
 
 ---
 

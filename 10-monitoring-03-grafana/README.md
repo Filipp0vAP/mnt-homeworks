@@ -81,7 +81,7 @@
     ```
 1. количество свободной оперативной памяти
     ``` 
-    node_memory_Cached_bytes{instance="nodeexporter:9100",job="nodeexporter"} + node_memory_Buffers_bytes{instance="nodeexporter:9100",job="nodeexporter"} + node_memory_SReclaimable_bytes{instance="nodeexporter:9100",job="nodeexporter"}
+    node_memory_MemFree_bytes{instance="nodeexporter:9100",job="nodeexporter"}
 
     ```
 1. количество места на файловой системе

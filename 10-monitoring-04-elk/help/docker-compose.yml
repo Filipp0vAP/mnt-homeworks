@@ -99,6 +99,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:Z
     depends_on:
       - logstash
+    networks:
+      - elastic
 
   some_application:
     image: library/python:3.9-alpine

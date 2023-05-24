@@ -2,7 +2,7 @@ version: '2.2'
 services:
 
   es-hot:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
     container_name: es-hot
     environment:
       - node.name=es-hot
@@ -34,7 +34,7 @@ services:
       retries: 50
 
   es-warm:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
     container_name: es-warm
     environment:
       - node.name=es-warm
@@ -61,7 +61,7 @@ services:
       retries: 50
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.11.0
+    image: docker.elastic.co/kibana/kibana:7.17.10
     container_name: kibana
     ports:
       - 5601:5601
@@ -75,7 +75,7 @@ services:
         condition: service_healthy
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:7.11.0
+    image: docker.elastic.co/logstash/logstash:7.17.10
     container_name: logstash
     ports:
       - 5046:5046
@@ -89,7 +89,7 @@ services:
         condition: service_healthy
 
   filebeat:
-    image: "docker.elastic.co/beats/filebeat:7.11.0"
+    image: "docker.elastic.co/beats/filebeat:7.17.10"
     container_name: filebeat
     privileged: true
     user: root

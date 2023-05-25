@@ -1,9 +1,8 @@
 filebeat.inputs:
   - type: container
-    enabled: true
-    encoding: utf-8
-    json.keys_under_root: true	
-    json.add_error_key: true
+    # enabled: true
+    # encoding: utf-8
+    # json.add_error_key: true
     paths:
       - '/var/lib/docker/containers/*/*.log'
 
@@ -15,8 +14,8 @@ processors:
       fields: ["message"]
       target: "json"
       overwrite_keys: true
-  - add_docker_metadata: ~
-  
+  # - add_docker_metadata: ~
+
 output.logstash:
   hosts: ["logstash:5044"]
 

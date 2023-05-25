@@ -83,7 +83,7 @@ services:
       - 5046:5046
     volumes:
       - ./configs/logstash.conf:/usr/share/logstash/config/logstash.conf
-      - ./configs/logstash.yml:/usr/share/logstash/pipeline/logstash.yml
+      - ./configs/logstash.yml:/usr/share/logstash/config/logstash.yml
     networks:
       - elastic
     depends_on:

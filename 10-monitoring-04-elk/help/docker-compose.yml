@@ -85,10 +85,13 @@ services:
     volumes:
       - ./configs/logstash.conf:/usr/share/logstash/config/logstash.conf
       - ./configs/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./configs/logstash.conf:/usr/share/logstash/pipeline/logstash.yml
     networks:
       - elastic
     depends_on:
       es-hot:
+        condition: service_healthy
+      es-warm:
         condition: service_healthy
 
   filebeat:

@@ -81,6 +81,7 @@ services:
     container_name: logstash
     ports:
       - 5046:5046
+      - 5044:5044      
     volumes:
       - ./configs/logstash.conf:/usr/share/logstash/config/logstash.conf
       - ./configs/logstash.yml:/usr/share/logstash/config/logstash.yml

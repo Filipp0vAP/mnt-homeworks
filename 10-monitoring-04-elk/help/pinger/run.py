@@ -3,6 +3,7 @@
 import logging
 import random
 import time
+logging.getLogger().setLevel(logging.INFO)
 
 while True:
 
@@ -15,6 +16,6 @@ while True:
     elif number == 2:
         logging.error('OH NO!!!!!!')
     elif number == 3:
-        logging.exception(Exception('this is exception'))
+        logging.exception(Exception('this is exception'), exc_info=False)
 
     time.sleep(1)

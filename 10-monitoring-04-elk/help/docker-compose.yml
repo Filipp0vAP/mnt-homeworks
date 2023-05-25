@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.9'
 services:
 
   es-hot:
@@ -10,7 +10,8 @@ services:
       - discovery.seed_hosts=es-warm
       - cluster.initial_master_nodes=es-hot,es-warm
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      #- "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
     volumes:
       - data01:/usr/share/elasticsearch/data
     ulimits:
@@ -20,8 +21,11 @@ services:
       nofile:
         soft: 65536
         hard: 65536
+    cap_add:
+      - IPC_LOCK
     ports:
       - 9200:9200
+      - 9300:9300
     networks:
       - elastic
     depends_on:
@@ -42,7 +46,8 @@ services:
       - discovery.seed_hosts=es-hot
       - cluster.initial_master_nodes=es-hot,es-warm
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      #- "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
     volumes:
       - data02:/usr/share/elasticsearch/data
     ulimits:
@@ -52,6 +57,8 @@ services:
       nofile:
         soft: 65536
         hard: 65536
+    cap_add:
+      - IPC_LOCK
     networks:
       - elastic
     healthcheck:
@@ -80,8 +87,8 @@ services:
     ports:
       - 5046:5046
     volumes:
-      - ./configs/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ./configs/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./configs/logstash.conf:/usr/share/logstash/config/logstash.conf
+      - ./configs/logstash.yml:/usr/share/logstash/pipeline/logstash.yml
     networks:
       - elastic
     depends_on:

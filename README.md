@@ -44,15 +44,13 @@
 
 10.1. [Зачем и что нужно мониторить](./10-monitoring-01-base)
 
-10.2. [Системы для мониторинга](./10-monitoring-02-systems)
+10.2. [Средство визуализации Grafana](./10-monitoring-02-grafana)
 
-10.3. [Средство визуализации Grafana](./10-monitoring-03-grafana)
+10.3. [Система сбора логов ELK](./10-monitoring-03-elk)
 
-10.4. [Система сбора логов ELK](./10-monitoring-04-elk)
+10.4. [Система-перехватчик ошибок Sentry](./10-monitoring-04-sentry)
 
-10.5. [Система-перехватчик ошибок Sentry](./10-monitoring-05-sentry)
-
-10.6. [Инцидент-менеджмент](/10-monitoring-06-incident-management)
+10.5. [Инцидент-менеджмент](/10-monitoring-05-incident-management)
 
 
 ## Дополнительные материалы к лекциям

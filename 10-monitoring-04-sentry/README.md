@@ -46,6 +46,47 @@ Free Cloud account имеет ограничения:
 
 ---
 
+## Ответы
+
+## Задание 1
+
+В сервисе зарегистрировался и создал проект
+    <details>
+    <summary> Вкладка Projects </summary>
+    ![project](./img/Project.png)
+    </details>
+
+## Задание 2
+Событие сгенерировал, страницу изучил и "решил" событие
+    <details>
+    <summary> Тестовое событие </summary>
+    ![exemple_issue](./img/exemple_issue.png)
+    ![all_issue](./img/all_issue.png)
+    </details>
+
+## Задание 3
+Создал алерт, сгенерил еще одно сообщение и получил письмо
+    <details>
+    <summary> Письмо с алертом </summary>
+    ![notify](./img/notify.png)
+    </details>
+
+
+## Задание повышенной сложности
+
+Использовал python скрипт из предыдущего урока
+
+Добавил в него интеграцию с sentry и проверил создание событий
+
+[Получившийся скрипт](./test.py)
+    <details>
+    <summary>События</summary>
+    ![error](./img/error.png)
+    ![issue](./img/exception.png)
+    </details>
+
+---
+
 ### Как оформить решение задания
 
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
